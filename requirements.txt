@@ -1,6 +1,0 @@
-﻿fastapi
-uvicorn
-sentence-transformers
-hf_xet
-numpy
-pydantic
