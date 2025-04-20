@@ -157,9 +157,7 @@ async def get_recommendations(
             "status": "success",
             "message": "Recommendations fetched successfully",
             "data": {
-                "recommendations": recommendations,
-                "query": query,
-                "significantWord": sig_word
+                "recommended_assessments": recommendations,
             }
         }
     except Exception as e:
