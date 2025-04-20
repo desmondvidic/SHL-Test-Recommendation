@@ -10,11 +10,20 @@ from fastapi import FastAPI, Query, HTTPException, Header
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="SHL Assessment Recommender API",
     description="API for recommending SHL assessments based on query text",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # This allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
 )
 
 # Load SHL assessment data
